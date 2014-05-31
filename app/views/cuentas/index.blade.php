@@ -1,0 +1,1 @@
+C:\xampp\htdocs\banco\app/views/cuentas/index.blade.php

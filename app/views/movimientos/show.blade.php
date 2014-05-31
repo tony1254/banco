@@ -1,0 +1,1 @@
+C:\xampp\htdocs\banco\app/views/movimientos/show.blade.php
