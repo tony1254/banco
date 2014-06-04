@@ -31,6 +31,7 @@ Route::get('users/login','UsersController@get_login');
 Route::get('users/logout','UsersController@get_logout');
 Route::Resource('sucursals','SucursalsController');
 Route::Resource('users','UsersController');
+Route::Resource('cuentas','CuentasController');
 
 
 

@@ -1,5 +1,5 @@
 <?php
 
 class Chuequesxcuentum extends \Eloquent {
-	protected $fillable = [];
+	protected $table = 'chuequesxcuentas';
 }

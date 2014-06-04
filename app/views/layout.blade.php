@@ -10,7 +10,7 @@
 		<ul class="nav nav-tabs">
 
   <li class= @yield('home', 'nada')><a href="/"><img src="/content/logo.ico" alt="Smiley face" height="42" width="42">Banco <p></p>Los Cuatro</a></li>
-  <li class= @yield('profile', 'nada')><a href="/users/create">User</a></li>
+  <li class= @yield('xxx', 'nada')><a href="/cuentas">xxx</a></li>
 
 
    <li class="dropdown">
@@ -24,6 +24,18 @@
   </li>
 @if (Auth::check())
     @if(Auth::user()->rol<1)
+
+  <li class= @yield('cuentas', 'dropdown')>
+    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+      Cuentas <span class="caret"></span>
+    </a>
+    <ul class="dropdown-menu">
+      <li><a href="/cuentas">Listado</a></li>
+      <li><a href="/cuentas/create">create</a></li>
+    </ul>
+  </li>
+
+
     <li class= @yield('users', 'dropdown')>
     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
       Usuarios <span class="caret"></span>

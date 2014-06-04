@@ -1,5 +1,5 @@
 <?php
 
-class Movimiento extends \Eloquent {
-	protected $fillable = [];
+class Movimiento extends Eloquent {
+	protected $table = 'movimientos';
 }

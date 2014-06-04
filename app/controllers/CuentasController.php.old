@@ -9,10 +9,7 @@ class CuentasController extends \BaseController {
 	 */
 	public function index()
 	{
-		$cuentas = Cuentum::all();
-
-		return View::make('cuentas/index')->with('cuentas',$cuentas);
-	
+		//
 	}
 
 	/**
@@ -22,7 +19,7 @@ class CuentasController extends \BaseController {
 	 */
 	public function create()
 	{
-		return View::make('cuentas/create');
+		//
 	}
 
 	/**
@@ -32,30 +29,7 @@ class CuentasController extends \BaseController {
 	 */
 	public function store()
 	{
-		return Input::all();
-		 $input = Input::all();
-    $cuentas = Cuentum::all();
-     $pasa=True;
-
-    foreach ($cuentas as $cuenta){
-    	if ($cuenta->id==$input['id']) {
-    		$pasa=False;
-    	}
-    }
-
-    if($pasa){
-    
-    $usr=new cuenta;
-    $usr->id=$input['id'];
-	$usr->tipo_cuenta=$input['tipo_cuenta'];
-	$usr->moneda=$input['moneda'];
-	$usr->monto=$input['monto'];
-    //users::create($usr);
-    $usr->save();
-return Redirect::to('cuentas')->with('mensaje_registro', 'Usuario Registrado')->with('color', 'alert alert-success');
-    }else{
-return Redirect::to('cuentas')->with('mensaje_registro', 'Usuario ya exite')->with('color', 'alert alert-danger'); 
-    }
+		//
 	}
 
 	/**

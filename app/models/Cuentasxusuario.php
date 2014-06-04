@@ -1,5 +1,5 @@
 <?php
 
 class Cuentasxusuario extends \Eloquent {
-	protected $fillable = [];
+	protected $table = 'cuentasxusuarios';
 }
