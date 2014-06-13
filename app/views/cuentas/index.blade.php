@@ -3,7 +3,7 @@
 @section('content')
 @section('cuentas')active @stop
 @if (Auth::check()) 
-@if (Auth::user()->rol<1) 
+@if (Auth::user()->rol<=1) 
 <h1>Lista de Cuentas</h1>
 	@if (Session::has('mensaje_registro'))
 
@@ -23,6 +23,8 @@
 			<th>Tipo de Cuenta</th>
 			<th>Cheques</th>
 			<th>Monto</th>
+			<th>id_usuario</th>
+			<th>Usuario</th>
 		</tr>
 		@foreach ($cuentas as $cuenta)
 		<tr>

@@ -14,6 +14,7 @@ class CreateChuequesxcuentasTable extends Migration {
 	{
 		Schema::create('chuequesxcuentas', function(Blueprint $table) {
 			$table->increments('id');
+			$table->integer('numero');
 			$table->integer('cuenta');
 			$table->decimal('monto',4,2);
 			$table->timestamps();

@@ -10,20 +10,35 @@
 		<ul class="nav nav-tabs">
 
   <li class= @yield('home', 'nada')><a href="/"><img src="/content/logo.ico" alt="Smiley face" height="42" width="42">Banco <p></p>Los Cuatro</a></li>
-  <li class= @yield('xxx', 'nada')><a href="/cuentas">xxx</a></li>
 
-
-   <li class="dropdown">
+  @if (Auth::check())
+    @if(Auth::user()->rol==2)
+  <li class= @yield('estado_cuenta', 'nada')><a href="/estado_cuenta">estado_cuenta</a></li>
+   <li class=@yield('o_usuario', 'dropdown')>
     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-      Dropdown <span class="caret"></span>
+      Opciones Usuario <span class="caret"></span>
     </a>
     <ul class="dropdown-menu">
-      <li><a href="1">Profile</a></li>
+      <li><a href="/estado_cuenta">estado_cuenta</a></li>
       <li><a href="#">Profile</a></li>
     </ul>
   </li>
+    @endif
+  @endif
+
 @if (Auth::check())
-    @if(Auth::user()->rol<1)
+    @if(Auth::user()->rol<=1)
+  
+  <li class= @yield('movimientos', 'dropdown')>
+    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+      movimientos <span class="caret"></span>
+    </a>
+    <ul class="dropdown-menu">
+      <li><a href="/movimientos">Listado</a></li>
+      <li><a href="/movimientos/create">create</a></li>
+    </ul>
+  </li>
+
 
   <li class= @yield('cuentas', 'dropdown')>
     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
@@ -45,6 +60,7 @@
       <li><a href="/users/create">create</a></li>
     </ul>
   </li>
+  @if(Auth::user()->rol<1)
    <li class= @yield('sucursals', 'dropdown')>
     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
       Sucursales <span class="caret"></span>
@@ -54,6 +70,7 @@
       <li><a href="/sucursals/create">create</a></li>
     </ul>
   </li>
+  @endif
 @endif
 @endif
 <li class= @yield('login', 'nada')><a href="/users/login">Login</a></li>
@@ -154,8 +171,10 @@
   @endif
 
 </ul>
+<BODY BACKGROUND="/content/fondoceleste.jpg">
 </head>
 <body>
+
 	<div id="wrap">
 		<div class="container">
 			@yield('content')

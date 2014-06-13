@@ -7,14 +7,9 @@ class CuentasxusuariosTableSeeder extends Seeder {
 
 	public function run()
 	{
-		$faker = Faker::create();
 
-		foreach(range(1, 10) as $index)
-		{
-			Cuentasxusuario::create([
-
-			]);
-		}
+			Cuentasxusuario::create(array('id' => '1','cuenta' => '1','sucursal' => '1',));
+			Cuentasxusuario::create(array('id' => '1','cuenta' => '2','sucursal' => '1',));
 	}
 
 }

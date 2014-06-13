@@ -324,7 +324,9 @@ return Redirect::to('users')->with('mensaje_registro', 'Usuario o dpi ya exite')
 
     $usr->dpi=$input['dpi'];
 	$usr->password=$input['password'];
+    if($salida!=""){
 	$usr->rol=$input['rol'];
+}
 	$usr->email=$input['email'];
     //users::create($usr);
     $usr->save();

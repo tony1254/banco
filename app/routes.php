@@ -25,6 +25,7 @@ Hola esto es un <b>botón</b>
 
  ;
 });
+Route::Resource('cuentas/estado_cuenta','CuentasController@estado_cuenta');
 // Route::Resource('tonies','ToniesController');
 Route::post('users/login','UsersController@post_login');
 Route::get('users/login','UsersController@get_login');
@@ -32,6 +33,7 @@ Route::get('users/logout','UsersController@get_logout');
 Route::Resource('sucursals','SucursalsController');
 Route::Resource('users','UsersController');
 Route::Resource('cuentas','CuentasController');
+Route::Resource('movimientos','MovimientosController');
 
 
 

@@ -7,14 +7,10 @@ class CuentaTableSeeder extends Seeder {
 
 	public function run()
 	{
-		$faker = Faker::create();
 
-		foreach(range(1, 10) as $index)
-		{
-			Cuentum::create([
+			Cuentum::create(array('id' => '1','tipo_cuenta' => '0','moneda' => '0','fech_creo' => '7/7/7','cheques'=>'10','monto'=>'100',));
+			Cuentum::create(array('id' => '2','tipo_cuenta' => '1','moneda' => '0','fech_creo' => '7/7/7','cheques'=>'0','monto'=>'100',));
 
-			]);
-		}
 	}
 
 }

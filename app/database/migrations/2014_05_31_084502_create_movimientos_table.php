@@ -15,6 +15,7 @@ class CreateMovimientosTable extends Migration {
 		Schema::create('movimientos', function(Blueprint $table) {
 			$table->increments('id');
 			$table->integer('tipo');
+			$table->integer('numero');
 			$table->integer('cuenta');
 			$table->string('nombres');
 			$table->string('apellidos');
@@ -23,6 +24,7 @@ class CreateMovimientosTable extends Migration {
 			$table->date('fech_finalizo');
 			$table->integer('cuenta_recibe');
 			$table->integer('user');
+			$table->decimal('saldo_ant',24,2);
 			$table->decimal('monto',24,2);
 			$table->timestamps();
 		});

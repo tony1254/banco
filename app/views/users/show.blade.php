@@ -17,7 +17,7 @@
 
 @if (Auth::check())
 
-@if (Auth::user()->rol<1)
+@if (Auth::user()->rol<=1)
 @if ($existe==false)
  <div class="btn-group">
   <button type="button" class="btn btn-default" onclick="window.location.href='/users'" > 

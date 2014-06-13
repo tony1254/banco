@@ -17,12 +17,7 @@
 
 
 {{ Form::open(array('url' => '/cuentas', 'method' => 'POST' ), array('role'=>'form')) }}
-    <div class="row">
-        <div class="form-group col-md-4">
-    {{ Form::label('id', 'ID'); }}
-    {{ Form::text('id',null,array('placeholder'=>'xxxx xxxxx xxxx','class'=>'form-control')) }}
-        </div>
-    </div>
+    
             <div class="row">
         <div class="form-group col-md-4">
     {{ Form::label('tipo_cuenta', 'Tipo de Cuenta'); }}
@@ -37,21 +32,29 @@
     </div>
             <div class="row">
         <div class="form-group col-md-4">
-    {{ Form::label('fech_nac', 'Fecha de Nacimiento'); }}
-    {{ Form::date('fech_nac') }}
+    {{ Form::label('fech_creo', 'Fecha de Creacion: '); }}
+    {{ Form::label('fech_creo',  date("d-m-Y H:m:s ")  ); }}
+      {{ Form::text('fech_creo',date("Y-m-d") ,array('placeholder'=>'xxxx xxxx','class'=>'invisible')) }}
         </div>
     </div>  
     <div class="row">
         <div class="form-group col-md-4">
-    {{ Form::label('cheques', 'cheques'); }}
+    {{ Form::label('cheques', 'Cheques'); }}
     {{ Form::text('cheques',null,array('placeholder'=>'xxxx xxxx','class'=>'form-control')) }}
         </div>
     </div>
 
     <div class="row">
         <div class="form-group col-md-4">
-    {{ Form::label('monto', 'monto'); }}
+    {{ Form::label('monto', 'Monto'); }}
     {{ Form::text('monto',null,array('placeholder'=>'xxxx xxxx','class'=>'form-control')) }}
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="form-group col-md-4">
+    {{ Form::label('id_user', 'id_user'); }}
+    {{ Form::text('id_user',null,array('placeholder'=>'xxxx xxxx','class'=>'form-control')) }}
         </div>
     </div>
 

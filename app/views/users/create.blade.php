@@ -41,8 +41,8 @@
      @endif
     @endif
     @if (Auth::check())
-      @if (Auth::user()->rol>=1)
-     {{ Form::select('rol',array('1' => 'Cajero', '2' => 'Cliente'));}}
+      @if (Auth::user()->rol==1)
+     {{ Form::select('rol',array( '2' => 'Cliente'));}}
      @endif
     @endif
 

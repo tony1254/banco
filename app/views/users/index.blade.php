@@ -3,7 +3,7 @@
 @section('content')
 @section('users')active @stop
 @if (Auth::check()) 
-@if (Auth::user()->rol<1) 
+@if (Auth::user()->rol<=1) 
 <h1>Lista de usuarios</h1>
 	@if (Session::has('mensaje_registro'))
 

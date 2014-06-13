@@ -35,15 +35,24 @@
     </div>
     <div class="row">
         <div class="form-group col-md-4">
-    {{ Form::label('rol', 'ROL'); }}
+    {{ Form::label('rol', 'ROL: '); }}
     @if (Auth::check())
       @if (Auth::user()->rol<1)
      {{ Form::select('rol',array('0' => 'Administrador', '1' => 'Cajero', '2' => 'Cliente'));}}
      @endif
     @endif
     @if (Auth::check())
-      @if (Auth::user()->rol>=1)
-     {{ Form::select('rol',array('1' => 'Cajero', '2' => 'Cliente'));}}
+      @if (Auth::user()->rol==1)
+      @if ($usr->rol==0)
+      {{ Form::label('rol','Administrador'); }}
+      @endif
+      @if ($usr->rol==1)
+      {{ Form::label('rol','Cajero'); }}
+      @endif
+      @if ($usr->rol==2)
+      {{ Form::label('rol','Cliente'); }}
+      @endif
+     
      @endif
     @endif
     
